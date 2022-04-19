@@ -10,7 +10,7 @@
 This document will share the road through semester 6 and the professional products I create and to what learning outcome these can be linked. For seperate learning events on certain topics seperate files will be created to share the progress through a certain topic.
 
 ## 3. Introduction
-My name is Luc Janssen and I'm a student in Software engineering on Fontys Eindhoven. Besides this I am also currently working as a Software Engineer for RYSK-IT. After my orienting internship I found out that my true passion in the field is creating back-end systems. I hope to learn a lot more about the enterprise side of this in the current semester.
+My name is Luc Janssen and I'm a student in Software engineering on Fontys Eindhoven. Besides this I am also currently working as a Software Engineer for [RYSK-IT](https://www.rysk-it.net/). After my orienting internship I found out that my true passion in the field is creating back-end systems. I hope to learn a lot more about the enterprise side of this in the current semester.
 
 During the spring of 2021 I did my first internship at RYSK-IT. Just like most other students I found that it was quite hard to find my place and how to educate myself on certain topics. However I do think that this is where I leaned the most. Due to the small size of the company I was forced to learn a lot myself with only global pointers from the mentor. After finishing the internship, the company was so statisfied with my work that they offered me to continue working together and offered me a job and I decided to stay.
 
