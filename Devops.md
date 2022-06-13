@@ -124,8 +124,10 @@ jobs:
           context: .
           push: true
           tags: lucjans26/notify:latest
-
 ```
+
+![image](https://user-images.githubusercontent.com/46562627/173388951-a9985ce8-df07-4495-8625-380ce46bf1eb.png)
+
 
 ## 3. Sonarcloud
 To check the quality of my code, I added a Sonarcloud workflow to my repositories. Sonarcloud checks the codebase not only for code smells and bugs, but also security hotspots and vulnerabilities. Using Sonarcloud can give a team a great insight into their code quality and can help prevent merging broken branches.
@@ -136,4 +138,9 @@ To check the quality of my code, I added a Sonarcloud workflow to my repositorie
 To prevent merging broken branches, I added branch protection rules. In this example the protection from the main branch requires any merge to pass the testing and the Sonarcloud quality control gate. This means that all tests must pass and the coverage must be at least 80%.
 
 ![mainBranchProtection](https://user-images.githubusercontent.com/46562627/171834189-3e98cc3f-83f8-4f68-9bf3-bffd20d376e5.png)
+
+## 4. Status badges
+To give the developers working on a project a quick insight into the workflow status of a project, [workflow status badges](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge) can be added to the readme.md.
+
+![image](https://user-images.githubusercontent.com/46562627/173389970-481b6e76-7721-4c95-9db4-08bd52f64e16.png)
 
