@@ -81,3 +81,12 @@ Through the analytics page of of Angolia I can check that the request came throu
 
 ![Algolia search monitor](https://user-images.githubusercontent.com/46562627/173346753-bda1da85-ece7-43a3-a7c8-461c858acb0a.PNG)
 
+### 2.3 Scaling
+Being aware of the pricing of a chosen cloud service is really important. Algolia provides 3 types of plans; Free, Standard or Premium. The difference between Standard or Premium are mostly down to personalisation (personalise search results per user using AI), dynamic re-ranking (boost well performing results), and Relevant sorts (AI sorted results without data duplication). Basically most of the AI functionalities.
+The exact price is based on the amount of records and requests. The more records and requests are made, the cheaper they become per singular unit. 
+
+![Algolia Pricing](https://user-images.githubusercontent.com/46562627/173388317-052067ff-f1b2-47cc-a382-6d35f9856c57.PNG)
+
+Because pricing is based on records and searches, the ammount of records dictates a large pertion of the total price that wil only go up with more data. Therefore it is important to think about where the weakest point is in your own search algorithm and only use a service like Algolia there. For smaller data sets or situations where slower responses are not an issue, Algolia will become just another billing item without any desired results.
+
+
