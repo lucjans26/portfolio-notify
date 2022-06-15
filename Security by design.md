@@ -35,5 +35,7 @@ And the user is logged in or registered and recieves a [Laravel Sanctum accessTo
 
 ![image](https://user-images.githubusercontent.com/46562627/171625743-4529d79c-7989-4a1c-8c18-ed9991083eb4.png)
 
+For the current scale of this application, the token scopes are sufficient. However in the future it would be essential to be prepared to deal with way more roles than the current application supports. This could be done in multiple ways. Within Laravel it could be handled within the controller which requires more logic which in turn is harder to upkeep. This might be a shortcomming within the current state of the framework.
+
 ## 5. Owasp Analysis tool
 If time allows a full owasp security check can be done using either free or paid tools like [Owasp Zed Attack Proxy](https://owasp.org/www-project-zap/) or [Acunetix](https://www.acunetix.com/). These tools check for (day-one) vunerabilities or security oversights in the existing codebase an can be used to a great extend to check the security of an application.  
