@@ -32,7 +32,7 @@ When the request is made through the gateway, a message is created and added to 
 
 As we can see the messages are stored in the queue until the worker is started to recieve the messages.
 
-(insert screenshot)
+![image](https://user-images.githubusercontent.com/46562627/173853340-014a05a2-c449-4d58-91aa-f9238d7ba95c.png)
 
 ## 4. Monitoring
 ### 4.1 Laravel
@@ -53,5 +53,21 @@ And all requests made to the api:
 
 
 ### 4.2 RabbitMQ
-### 4.3 Azure
-### 4.4 Algolia
+There are many ways to monitor rabbitMQ. It is possible to get data from the management [HTTP API](https://www.rabbitmq.com/management.html#http-api) and display this in for example [Grafana](https://grafana.com/) or [Prometheus](https://prometheus.io/).
+The built in management UI displays basic metrics, but there are some limitations to this as well. Using a visualisation service can result in less overhead, better (long term) data storage, access to more metrics, and decoupling from the system being monitored. When moving forward to production (in a big team) using a visualisation service is pretty necessary. However for the development purposes I chose to stick to the built in monitoring.
+
+![image](https://user-images.githubusercontent.com/46562627/173858774-3195b4cb-6517-4ef1-b8b4-1c5d645fa436.png)
+
+### 4.3 Algolia
+Similar to RabbitMQ, as a developer you have the choice to monitor the inner workings of your Algolia implementation through the built-in monitoring or use the [HTTP API](https://www.algolia.com/doc/rest-api/monitoring/) the service provides. This also results into more or less the same upsides and downsides as RabbitMQ. For the development purposes I again chose to stick with the built in monitoring where I can check the records, average search speed, search requests, replica indices and much more.
+
+![image](https://user-images.githubusercontent.com/46562627/173860741-5170b9ec-6f5e-441e-b471-c93d875cf060.png)
+
+![image](https://user-images.githubusercontent.com/46562627/173860847-4897cb26-630b-435f-a8f1-80fe067d61c3.png)
+
+![image](https://user-images.githubusercontent.com/46562627/173860952-7e546e20-6e54-483b-96ad-50847c6ea80f.png)
+
+
+### 4.4 Azure
+
+
