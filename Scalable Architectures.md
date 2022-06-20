@@ -18,6 +18,7 @@ As mentioned before, designing a well thought out architecture is essential to m
 
 ## 3. Messaging
 To make sure all the microservices are reliably and asynchrously connected messaging needs to be introduces to the mix. This also makes sure that the load can be evenly spread and that requests are never lost internally when for example a microservice (temporarily) goes down.
+
 ### 3.1 Setup
 Deploying rabbitMQ for testing puposes is incredibly easy. All that is needed is an installation of docker and the image can be pulled and depoyed locally using the following command `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management`.
 After that I checked out the [Laravel news RabbitMQ article](https://laravel-news.com/laravel-rabbitmq-queue-driver) and set it up as presented on the [github page](https://github.com/vyuldashev/laravel-queue-rabbitmq). I added the package using `composer require vladimir-yuldashev/laravel-queue-rabbitmq` and configured the service.
@@ -69,5 +70,38 @@ Similar to RabbitMQ, as a developer you have the choice to monitor the inner wor
 
 
 ### 4.4 Azure
+
+## 5. Kubernetes
+[Kubernetes](https://kubernetes.io/), also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. To create the ultimate scalable application it is essential that it is containerized in a system built for this purpose.
+
+### 5.1 Setup
+Before starting out, the nessecary software needs to be installed. 
+
+First of all [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) needs to be installed. This is the command-line tool to run commands against Kubernetes clusters. It can be used to depoy applications, manage and inspect clusters, and check pod logs. On linux this is easily accomplished with the following commands.
+
+`curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"` to download the latest release.
+
+`sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl` to install the downloaded release.
+
+After this [Minikube](https://minikube.sigs.k8s.io/docs/) can be installed. Minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes. This too is easily installed on Linux using the following commands.
+
+`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64` to download the latest release.
+
+`sudo install minikube-linux-amd64 /usr/local/bin/minikube` to install the downloaded release.
+
+After the installation the cluster can be started using `minikube start`.
+
+### 5.2 Execution
+Since I already have a docker-compose file setup, I have a good basis to form kubernetes configurations. Luckily Kubernetes is [prepared](https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/) for people wanting to do this. Using the Kompose package, every docker-compose.yml can be converted to Kubernetes configurations. Using the `Kompose convert` command this can be accomplished.
+
+![image](https://user-images.githubusercontent.com/46562627/174627773-6e4e533c-94f9-4b5e-bc2b-d306c66e3b4a.png)
+
+All the needed configurations have now been created, including all the neccesary imported volumes. 
+
+Using the `kubectl apply -f ["configurations"]` we can apply the configurations and we can run the pods.
+
+![image](https://user-images.githubusercontent.com/46562627/174628656-6ecde1df-170d-4234-8df8-a690f5179b84.png)
+
+Unfortunately we can see that the gateway and microservice are not running because they crashed. This is the unfortunate result of the fact that a Laravel API is not a "running application" in that sense. Therefore Kubernetes stops the pod. At this point this issue has not been resolved 
 
 
