@@ -12,8 +12,6 @@ The API needs an event model and a database migration that matches quite closely
 
 ### 3.2 Implementation
 Firstly an event model is created which is almost a carbon copy to the original. The only thing that is really added is an `action type`. This variable declares what action exactly was undertaken to create this result. 
-The [migration](https://laravel.com/docs/9.x/migrations) is merely a way to set up the needed database tables.
-
 ```php
 class SongEvent extends Model
 {
@@ -31,6 +29,9 @@ class SongEvent extends Model
     protected $table = "song_events";
 }
 ```
+The [migration](https://laravel.com/docs/9.x/migrations) is merely a way to set up the needed database tables.
+
+![image](https://user-images.githubusercontent.com/46562627/174597793-78902a53-e088-4f5a-8211-b7b6eaa4812b.png)
 
 The uploadSong method has some extra logic now. After uploading the song to the file storage, and creating a song record, a SongEvent record is created. This logs the action of uploading. The same is then applied to anything that can happen to the song from this point out. For example updating, deleting, etc.
 ```php
